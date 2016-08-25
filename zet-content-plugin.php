@@ -7,6 +7,8 @@ Version: 1.0
 Author: Netgon Team
 Author URI: http://netgon.ru
 License: GPLv2
+Text domain: zet
+Domain Path: /languages
 */
 
 /*  Copyright 2016  Netgon Team  (email : support@netgon.ru)
@@ -62,14 +64,12 @@ function zet_custom_posts(){
     zet_contact_post_type();
 };
 
-/**
-* Blog page creation
-*
-*/
+
+// blog page creation
 if(null == get_page_by_title('Blog Page',OBJECT,'page')){
     $page_data = array(
-            'post_title' => "Blog Page",
-            'post_content' => "Don't remove this page!",
+            'post_title' => esc_html__('Blog Page', 'zet'),
+            'post_content' => esc_html_('Don&#8216;t remove this page!','zet'),
             'post_status' => 'publish',
             'post_type' => 'page',
             'post_name' => 'blog'
@@ -78,6 +78,11 @@ if(null == get_page_by_title('Blog Page',OBJECT,'page')){
 };  
 
 
+function zet_show_resume_contactform(){
+    $resume_contactform = '<form id="contact-form" method="POST" class="contact-form"><input type="text" name="visitor-name" placeholder="%1$s" pattern="^[a-zA-Z][a-zA-Z0-9-_.]{1,20}$"><input type="email" name="visitor-email" placeholder="%2$s"><textarea name="visitor-message" placeholder="%3$s"></textarea><button id="contact-form-btn" type="button" name="submit" data-style="fill" data-horizontal class="progress-button"><span class="content">%4$s</span><span class="progress"><span class="progress-inner"></span></span></button><input type="hidden" name="user" value="%5$s" />
+<input type="hidden" name="user_email" value="%6$s" /><input type="hidden" name="user_url" value="%7$s" /></form>';
+   return $resume_contactform;
+};
 
 
 
