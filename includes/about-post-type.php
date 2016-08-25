@@ -2,19 +2,19 @@
 
 function zet_about_post_type(){
 	$labels = array(
-		'name' => 'About me',
-		'singular_name' => 'About me',
-		'add_new' => 'Add new About me entry',
-		'add_new_item' => 'Add new About me entry',
-		'edit_item' => 'Edit About me entry',
-		'new_item' => 'New About me entry',
-		'all_items' => 'All About me entries',
-		'view_items' => 'View About me entry',
-		'search_items' => 'Search About me entry',
-		'not found' => 'Not About me entries found',
-		'not_found_in_trash' => 'No About me entries found in Trash',
+		'name' => esc_html__('About me','zet'),
+		'singular_name' => esc_html__('About me','zet'),
+		'add_new' => esc_html__('Add new About me entry','zet'),
+		'add_new_item' => esc_html__('Add new About me entry','zet'),
+		'edit_item' => esc_html__('Edit About me entry','zet'),
+		'new_item' => esc_html__('New About me entry','zet'),
+		'all_items' => esc_html__('All About me entries','zet'),
+		'view_items' => esc_html__('View About me entry','zet'),
+		'search_items' => esc_html__('Search About me entry','zet'),
+		'not found' => esc_html__('Not About me entries found','zet'),
+		'not_found_in_trash' => esc_html__('No About me entries found in Trash','zet'),
 		'parent_item_colon' => '',
-		'menu_name' => 'ABOUT ME'
+		'menu_name' => esc_html__('ABOUT ME','zet')
 		
 	);	
 	$data = array(

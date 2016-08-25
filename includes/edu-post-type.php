@@ -2,19 +2,19 @@
 
 function zet_education_post_type(){
 	$labels = array(
-		'name' => 'education',
-		'singular_name' => 'education',
-		'add_new' => 'Add new Education entry',
-		'add_new_item' => 'Add new Education entry',
-		'edit_item' => 'Edit Education entry',
-		'new_item' => 'New Education entry',
-		'all_items' => 'All Education entries',
-		'view_items' => 'View Education entry',
-		'search_items' => 'Search Education entry',
-		'not found' => 'Not Education entries found',
-		'not_found_in_trash' => 'No Education entries found in Trash',
+		'name' => esc_html__('education','zet'),
+		'singular_name' => esc_html__('education','zet'),
+		'add_new' => esc_html__('Add new Education entry','zet'),
+		'add_new_item' => esc_html__('Add new Education entry','zet'),
+		'edit_item' => esc_html__('Edit Education entry','zet'),
+		'new_item' => esc_html__('New Education entry','zet'),
+		'all_items' => esc_html__('All Education entries','zet'),
+		'view_items' => esc_html__('View Education entry','zet'),
+		'search_items' => esc_html__('Search Education entry','zet'),
+		'not found' => esc_html__('Not Education entries found','zet'),
+		'not_found_in_trash' => esc_html__('No Education entries found in Trash','zet'),
 		'parent_item_colon' => '',
-		'menu_name' => 'EDUCATION' 
+		'menu_name' => esc_html__('EDUCATION','zet')
 	);	
 	$data = array(
 		'labels' => $labels,

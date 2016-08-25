@@ -2,19 +2,19 @@
 
 function zet_experience_post_type(){
 	$labels = array(
-		'name' => 'experience',
-		'singular_name' => 'experience',
-		'add_new' => 'Add new Experience entry',
-		'add_new_item' => 'Add new Experience entry',
-		'edit_item' => 'Edit Experience entry',
-		'new_item' => 'New Experience entry',
-		'all_items' => 'All Experience entries',
-		'view_items' => 'View Experience entry',
-		'search_items' => 'Search Experience entry',
-		'not found' => 'Not Experience entries found',
-		'not_found_in_trash' => 'No Experience entries found in Trash',
+		'name' => esc_html__('experience','zet'),
+		'singular_name' => esc_html__('experience','zet'),
+		'add_new' => esc_html__('Add new Experience entry','zet'),
+		'add_new_item' => esc_html__('Add new Experience entry','zet'),
+		'edit_item' => esc_html__('Edit Experience entry','zet'),
+		'new_item' => esc_html__('New Experience entry','zet'),
+		'all_items' => esc_html__('All Experience entries','zet'),
+		'view_items' => esc_html__('View Experience entry','zet'),
+		'search_items' => esc_html__('Search Experience entry','zet'),
+		'not found' => esc_html__('Not Experience entries found','zet'),
+		'not_found_in_trash' => esc_html__('No Experience entries found in Trash','zet'),
 		'parent_item_colon' => '',
-		'menu_name' => 'EXPERIENCE' 
+		'menu_name' => esc_html__('EXPERIENCE','zet') 
 	);	
 	$data = array(
 		'labels' => $labels,

@@ -2,19 +2,19 @@
 
 function zet_language_post_type(){
 	$labels = array(
-		'name' => 'language',
-		'singular_name' => 'Language',
-		'add_new' => 'Add new Language entry',
-		'add_new_item' => 'Add new Language entry',
-		'edit_item' => 'Edit Language entry',
-		'new_item' => 'New Language entry',
-		'all_items' => 'All Language entries',
-		'view_items' => 'View Language entry',
-		'search_items' => 'Search Language entry',
-		'not found' => 'Not Language entries found',
-		'not_found_in_trash' => 'No Language entries found in Trash',
+		'name' => esc_html__('language','zet'),
+		'singular_name' => esc_html__('Language','zet'),
+		'add_new' => esc_html__('Add new Language entry','zet'),
+		'add_new_item' => esc_html__('Add new Language entry','zet'),
+		'edit_item' => esc_html__('Edit Language entry','zet'),
+		'new_item' => esc_html__('New Language entry','zet'),
+		'all_items' => esc_html__('All Language entries','zet'),
+		'view_items' => esc_html__('View Language entry','zet'),
+		'search_items' => esc_html__('Search Language entry','zet'),
+		'not found' => esc_html__('Not Language entries found','zet'),
+		'not_found_in_trash' => esc_html__('No Language entries found in Trash','zet'),
 		'parent_item_colon' => '',
-		'menu_name' => 'LANGUAGE SKILLS' 
+		'menu_name' => esc_html__('LANGUAGE SKILLS','zet') 
 	);	
 	$data = array(
 		'labels' => $labels,
