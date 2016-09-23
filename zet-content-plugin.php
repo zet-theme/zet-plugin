@@ -44,6 +44,11 @@ function zet_content_install() {
 	
 };
 
+add_action('wp_enqueue_scripts','zet_add_ajax'); 
+    function zet_add_ajax() {
+        wp_localize_script('jquery','AjaxHandler',array('ajaxurl'=>admin_url('admin-ajax.php')));
+    };
+
 // create taxonomy for custom posts
 add_action('init','zet_categories');
 function zet_categories(){
@@ -84,7 +89,29 @@ function zet_show_resume_contactform(){
    return $resume_contactform;
 };
 
+// sendmail handler
+add_action('wp_ajax_sendmail', 'zet_sendmail_contact');
+add_action('wp_ajax_nopriv_sendmail', 'zet_sendmail_contact');
+function zet_sendmail_contact(){
+    
+        $frm_name = sanitize_text_field($_POST["user"]); 
+        $recepient = sanitize_email($_POST["user_email"]); 
+        $sitename  = sanitize_text_field($_POST["user_url"]); 
+        $subject   = esc_html__('New contact from','zet') . ' '. esc_html__( $sitename ); 
 
+        $name = sanitize_text_field($_POST["name"]);
+        $email = sanitize_email($_POST["email"]);
+        $msg = sanitize_text_field($_POST["message"]);
+                
+        $name = ($name) ? $name : esc_html_e('no visiter&#8216;s name','zet');
+        $email = ($email) ? $email : esc_html_e('no visiter&#8216;s email','zet');
+        $msg = ($msg) ? $msg : esc_html_e('no visiter&#8216;s message','zet');
+
+        $message = '-------------------<br><br>' . esc_html__('Visitor name:','zet') . $name . '<br>' . esc_html__('Visitor email:','zet') . $email . '<br><br>' . $msg . '<br><br>-------------------';
+
+        wp_mail($recepient, $subject, $message,esc_html__('From:','zet') . $name . "<$recepient>" . "\r\n" . esc_html__('Reply-To:','zet') . $recepient . "\r\n" . "X-Mailer: PHP/" . phpversion() . "\r\n" . "Content-type: text/html; charset=\"utf-8\"");
+        wp_die();
+};
 
 
 ?>
